@@ -1,0 +1,10 @@
+new ClassPathXmlApplicationContext("spring.xml")
+--> This basically tells the spring framework to create an IoC container which will be configured according to what is written in the spring.xml file. The spring framework will look for the spring.xml file in a special directory - the "resources" directory
+After successfully creating the IoC container, spring will create objects of certain specific classes - classes which are specified as beans in the .xml file - inside the IoC container. We can refer to a bean with their id in the .java files.
+That is why, the code inside the constructor of the bean classes gets executed when the above code segment is run.
+
+ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+--> Here, we can refer to the IoC container using the "applicationContext" reference variable.
+
+ApplicationContext applicationContext1 = new ClassPathXmlApplicationContext("ritwik.xml");
+--> this will create another IoC container with exactly the same configuration as specified in "ritwik.xml" file, and then create the objects of all the bean classes within the container.
